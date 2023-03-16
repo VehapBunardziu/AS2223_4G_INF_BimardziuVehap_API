@@ -30,10 +30,10 @@ namespace AS2223_4G_INF_BimardziuVehap_API.Controllers
         {
             if (n >= 0)
             {
-                int output = n;
-                for (int i = n; i > 1; i--)
+                int output = 1;
+                for (int i = 1; i < n; i++)
                 {
-                    output = output + (output * i - 1);
+                    output += output * i;
                 }
                 return Json(new { output = new { number = n, factorial = output }, status = "OK" });
             }
@@ -59,8 +59,5 @@ namespace AS2223_4G_INF_BimardziuVehap_API.Controllers
                 return Json(new { output = new { income = income, taxes = temp }, status = "OK" });
             }
         }
-
-
-
     }
 }
